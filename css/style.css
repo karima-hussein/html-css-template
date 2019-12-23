@@ -1,0 +1,716 @@
+/*
+    1-common styles
+    2-General Styles
+    3-Sections
+        -header
+        -home
+        -portfolio
+        -services
+        -prices
+        -team
+        -blog
+        -content
+        =footer
+ */
+ /* common */
+.container{
+    width: 80%;
+    margin: auto; 
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(28, 29, 33, 0.8);
+}
+.hvr-sweep-to-right::before,.hvr-sweep-to-bottom::before{
+    background-color:#1C1D21 ;
+}
+.mg-l-20{
+    margin-left:10%;
+}
+.cap{
+    text-transform: capitalize;
+}
+.opacity-ho{
+    transition: opaicty 0.6s;
+}
+.opacity-ho:hover{
+    opacity:0.8;
+}
+.clear{
+    clear: both;
+}
+.section-header{
+    text-align: center;
+}
+.section-header .section-title{
+    text-transform: capitalize;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.pd-y{
+    padding:120px 0;
+}
+.upper{
+    text-transform: uppercase;
+}
+.blue-icon{
+    color: var(--myblue);
+    margin-bottom: 20px;
+}
+.mg-b-10{
+    margin-bottom: 10px;
+}
+
+.md-2{
+    margin: 0 2% 0 2%;
+}
+.section-header .section-line{
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 0 auto 70px auto;
+    background-color: var(--myblue);
+}
+/* End common */
+
+/*2-General Style*/
+body{
+    font-family: 'Varela Round', sans-serif;
+    --myblue:#6195FF;
+    --mygrey:#868F9B;
+}
+textarea::placeholder{
+    font-family: 'Varela Round', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+button{
+    font-family: inherit;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*End of General styles*/
+
+/* 3-sections */
+/* -header */
+.header{
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.logo{
+    width: 40%;
+    float: left;
+}
+.logo img{
+    width: 25%;
+    margin-top:1%;
+}
+.navbar{
+    width: 60%;
+    float: left;
+    list-style: none;
+    text-align: right;
+}
+.navbar>li{
+    display: inline-block;
+}
+.navbar>li>a{
+    display: block;
+    padding: 20px 13px;
+    color: white;
+    font-size: 15px;
+}
+.navbar>li>a:after, a.active:after{
+    content: "";
+    display: block;
+    height: 2px;
+    transition: width 0.2s;
+    background-color: var(--myblue);
+}
+.navbar>li>a:after{
+    width: 0%;
+}
+.navbar>li>a.active:after{
+    width: 100%;
+}
+.navbar>li> a:hover::after{
+    width: 100%;
+}
+   /* we can use it instead of clear both solutions
+.content-overflow{
+    overflow: hidden;
+} */
+.dropdown{
+    position: relative;
+}
+.dropdown-menu{
+    position: absolute;
+    text-align: center;
+    list-style: none;
+    width: 150px;
+    background-color: #6195FF;
+    opacity: 0;
+    visibility: hidden;
+    left: -50%;
+    top:90%;
+    transition: opacity 0.5s visibility 0.5s;
+}
+.dropdown-menu >li>a{
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border: 1px black solid;
+    color:#FFF;
+}
+.dropdown-menu >li>a:hover{
+    background-color: #426cc066;
+}
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+/* end of header */
+
+/* Home section */
+.home{
+    height: 100vh;
+    background-image: url("../images/background/background1.webp");
+    background-size: cover;
+    position: relative;
+}
+
+.home-content{
+    width: 70%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.home-content #title{
+    font-size: 54px;
+    color: white;
+    text-transform: uppercase;
+}
+.home-content .home-des{
+    margin: 10px 0;
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+.home .btn{
+    min-width: 160px;
+    padding: 10px;
+    border: 0;
+    border-radius: 2%;
+    font-size: 15px;
+}
+.home-content .btn-start{
+    background-color: #FFF;
+    color: black;
+    text-transform: capitalize;
+    margin-right: 1% ;
+}
+.home-content .btn-learn{
+    background-color: #6195FF;
+    color: white;
+    text-transform: capitalize;
+}
+/* End Home */
+/* about section */
+.about-content{
+    overflow: hidden;
+}
+.about-content .about-item{
+    width: 30%;
+    border: 1px solid #eee;
+    float: left;
+    text-align: center;
+    padding: 50px 20px;
+}
+.md{
+    margin: 0 5% 0 5%;
+}
+.about-item a{
+    color: var(--myblue);
+}
+.about-item .item-desc{
+    color:var(--mygrey);
+    line-height: 1.5;
+}
+/* End about */
+/* portfolio */
+.portfolio,.why{
+    background-color: #FAFAFA;
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
+    
+}
+.port-content{
+    overflow: hidden;
+}
+.port-item{
+    width: 32%;
+    float: left;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 15px;
+}
+.port-item img{
+    width: 100%;
+}
+.port-item .layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.port-item:hover .layer{
+    visibility: visible;
+    opacity: 1;
+}
+.layer-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.layer-content .cat{
+    color: var(--myblue);
+    text-transform: uppercase;
+    text-align: center;
+    display:block;
+    font-size: 16px;
+}
+.layer-text{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.layer-content .layer-desc{
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    transition-delay: 0.1s;
+}
+.layer-content i{
+    color: #fff;
+    background-color: var(--myblue);
+    padding: 18px;
+    text-align: center;
+    display: inline-block;
+    
+}
+.layer-content a{
+    transition-delay: 0.2s;
+}
+.effect-up{
+    position: relative;
+    top:10px;
+    transition: top 0.4s;
+}
+.port-item:hover .effect-up{
+    top:-10px;
+}
+/* end portfolio */
+/*  service */
+.service-content{
+    overflow: hidden ;
+}
+.service-item{
+    width: 30%;
+    float:left;
+    border: 1px solid #eee;
+    position: relative;
+    padding: 40px 20px 40px 73px;
+    margin-bottom: 50px;
+}
+.service-item i{
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    color: var(--myblue);
+}
+.service-item p{
+    color: var(--mygrey);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+/* -----------------------------------why choose us ----------------------------*/
+.why .section-header{
+    text-align: left;
+}
+.why .section-header span{
+    margin-left: 0;
+    margin-bottom: 39px;
+}
+.why .content-left{
+    padding: 0 40px 0;
+}
+.why-item{
+    float: left;
+    width: 50%;
+}
+.why .content-left-des {
+    color: var(--mygrey);
+    line-height: 1.5;
+}
+.why .content-left-list,.price-ta-item .item-props{
+    list-style: none;
+    margin: 20px 0;
+    line-height: 3;
+    color: var(--mygrey);
+} 
+.why .content-left-list li i{
+    color: var(--myblue);
+    border: var(--myblue) solid 1px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.content-right img{
+    width: 100%;
+    height: 100%;
+}
+ .rates{
+    background-image: url(../images/background/background2.webp);
+    position: relative;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+ .rates .rate-item{
+    width: 15%;
+    float: left;
+    padding-top: 50px;
+    text-align: center;
+}
+.rates .rate-item i{
+    color: var(--myblue);
+}
+.rates .rate-item h2 ,.rates .rate-item h3{
+    color: #fff;
+}
+.rates .rate-item h3{
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* end service */
+/* pricing */
+.pricing-table{
+    overflow-anchor: hidden;
+}
+.price-ta-item{
+    width: 30%;
+    float: left;
+    border: 1px solid #eee;
+    text-align:center;
+    padding: 25px 0;
+}
+.price-ta-item .item-title{
+    display: block;
+    color:var(--mygrey);
+    font-size: 17px;
+}
+.price-ta-item .item-period{
+    margin:20px auto;
+    width: 140px;
+    height: 140px;
+    border: 2px solid var(--myblue);
+    border-radius: 50%;
+    position: relative;
+}
+.price-ta-item .item-period h2{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.price-ta-item .item-period h2{
+    font-size: 42px;
+}
+.price-ta-item .item-period span{
+    font-size: 14px;
+    display: block;
+}
+.price-ta-item .item-props{
+    line-height: 2;
+}
+.price-ta-item .item-btn{
+    border: 2px solid var(--myblue);
+    padding: 10px 35px ;
+    font-size: 15px;
+    background-color: transparent;
+    color: var(--myblue);
+
+}
+/* end pricing */
+.john{
+    position: relative;
+    height: 400px;
+    background-image: url(../images/background/background3.webp);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+.john .john-item{
+    width: 50%;
+    padding: 50px;
+    float: left;
+    margin-top: 70px;
+}
+.john .john-item .user{
+    margin-bottom: 20px;
+    position: relative;
+    /* background-color: red; */
+    overflow: hidden;
+    padding: 15px 0;
+}
+.john .john-item .user img{
+    border-radius: 50%;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 5px;
+    margin-bottom: 20px;
+}
+.john .john-item .user .name{
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.john .john-item .user span{
+    display: block;
+    padding-left: 100px;
+}
+.john .john-item .user .title{
+    color: var(--myblue);
+    font-weight: normal;
+}
+/* ---------------------team-------------------*/
+.team-content{
+    overflow: hidden;
+}
+.team-content .team-member{
+    float: left;
+    width: 30%;
+    background-color: #F4F4F4;
+    padding: 40px 20px;
+    text-align: center;
+    transform: perspective(1px) translateZ(0);
+}
+.team-member img{
+    width: 100%;
+    display: block;
+}
+.team-member .member-name{
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 8px 0;
+}
+.team-member .member-title{
+    display: block;
+    color: var(--mygrey);
+    font-size: 15px;
+    margin: 5px 0;
+
+}
+.team-member .team-image{
+    position: relative;
+    overflow: hidden;
+}
+.team-member .team-image .icons{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color:rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.1s;
+}
+.team-member:hover .icons{
+    visibility: visible;
+    opacity: 1;
+}
+.team-member .team-image .icons a{
+    display: block;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    background-color: var(--myblue);
+}
+.team-member .team-image .icons i{
+    color: #fff; 
+    line-height: 40px; 
+}
+.team-member.hvr-sweep-to-bottom{
+    z-index: 1;
+}
+.hvr-sweep-to-bottom:hover .member-title{
+    color: var(--myblue);
+}
+/* end team */
+/* blog */
+.blog{
+    background-color: #F4F4F4;
+}
+.blog-holder{
+    overflow: hidden;
+}
+.blog .blog-item{
+    width: 30%;
+    float: left;
+
+}
+.blog .blog-item img{
+    width: 100%;
+    display: block;
+    margin-bottom: 25px;
+}
+.blog .blog-item .blog-desc{
+    padding: 0 10px;
+}
+.blog-desc .social i,.blog-desc a{
+    color: var(--myblue);
+}
+.blog-desc .social span{
+    padding: 0 5px;
+}
+.blog-desc h2{
+    font-size: 20px;
+    margin:10px 0;
+}
+/* end blog */
+/* contact */
+.contact .contact-info{
+    width:70%;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.contact-info .info-item{
+    float: left;
+    width: 20%;
+}
+.contact-info .info-item-md{
+    margin:0 20%;
+}
+.contact-info .info-item i{
+    color:var(--myblue);
+}
+.contact-info .info-item span{
+    display: block;
+    color: var(--mygrey);
+}
+.contact .contact-form{
+    width:60%;
+    margin:auto;
+}
+.contact .contact-form input{
+    padding:13px;
+    margin-bottom: 20px;
+    background-color:#f4f4f4;
+    border: 0;
+}
+.contact .contact-form input[type="text"],.contact .contact-form input[type="email"] , .contact .contact-form textarea{
+    opacity: 0.5;
+    border-bottom: 2px solid #eee;
+    transition: opacity 0.3;
+}
+.contact .contact-form input:focus , .contact .contact-form textarea:focus{
+    opacity: 1;
+}
+.contact .contact-form textarea{
+    margin-bottom: 20px;
+    height: 80px;
+    background-color:#f4f4f4;
+    border: 0;
+    padding: 13px;
+
+}
+.contact .contact-form input[placeholder="Name"], .contact .contact-form input[placeholder="Email"]{
+    width: calc(50% - 10px);
+    /* margin-right:10%; */
+}
+.contact .contact-form input[placeholder="Email"]{
+    margin-left: auto;
+    display: inline-block;
+    margin-left:15px;
+}
+.contact .contact-form input[placeholder="Subject"],.contact .contact-form textarea{
+    width: 100%;
+}
+.contact .contact-form input[type="submit"]{
+    background-color: #6195ff;
+    padding: 15px 40px;
+    color: #fff;
+    font-size: inherit;
+    font-family: inherit;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 2%;
+}
+/* end contact */
+/* footer */
+footer{
+    width: 100%;
+    background-color:#1c1d21 ;
+    text-align: center;
+    color: var(--mygrey);
+}
+footer h2{
+    color:#fff;
+    font-size:50px;
+    margin-bottom: 35px;
+}
+footer .footer-icons a{
+    width:40px;
+    height: 40px;
+    display: inline-block;
+    background-color: var(--myblue);
+    margin-right: 10px;
+    margin-bottom: 25px;
+}
+footer .footer-icons i{
+    line-height: 40px;
+    text-align: center;
+    color:#fff;
+    border-radius: 1%;
+}
+footer span{
+    color:var(--myblue);
+}
+/* end footer */
